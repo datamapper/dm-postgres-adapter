@@ -1,6 +1,11 @@
+require 'do_postgres'
+require 'dm-do-adapter'
+
 module DataMapper
   module Adapters
+
     class PostgresAdapter < DataObjectsAdapter
+
       module SQL #:nodoc:
         private
 
@@ -8,11 +13,13 @@ module DataMapper
         def supports_returning?
           true
         end
-      end #module SQL
+      end
 
       include SQL
-    end # class PostgresAdapter
+
+    end
 
     const_added(:PostgresAdapter)
-  end # module Adapters
-end # module DataMapper
+
+  end
+end
