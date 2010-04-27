@@ -1,14 +1,20 @@
 require 'spec_helper'
 
-require 'dm-migrations'
-
-require 'dm-core/spec/adapter_shared_spec'
+require 'dm-core/spec/shared/adapter_spec'
 require 'dm-do-adapter/spec/shared_spec'
+
+require 'dm-migrations'
+require 'dm-postgres-adapter/spec/setup'
+
+ENV['ADAPTER']          = 'postgres'
+ENV['ADAPTER_SUPPORTS'] = 'all'
+
+DataMapper::Spec.setup
 
 describe 'DataMapper::Adapters::PostgresAdapter' do
 
   before :all do
-    @adapter    = DataMapper.setup(:default, 'postgres://localhost/dm_core_test')
+    @adapter    = DataMapper::Spec.adapter
     @repository = DataMapper.repository(@adapter.name)
   end
   
