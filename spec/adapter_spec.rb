@@ -9,8 +9,6 @@ require 'dm-postgres-adapter/spec/setup'
 ENV['ADAPTER']          = 'postgres'
 ENV['ADAPTER_SUPPORTS'] = 'all'
 
-DataMapper::Spec.setup
-
 describe 'DataMapper::Adapters::PostgresAdapter' do
 
   before :all do
