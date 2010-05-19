@@ -15,7 +15,7 @@ describe 'DataMapper::Adapters::PostgresAdapter' do
     @adapter    = DataMapper::Spec.adapter
     @repository = DataMapper.repository(@adapter.name)
   end
-  
+
   it_should_behave_like "An Adapter"
   it_should_behave_like "A DataObjects Adapter"
 
