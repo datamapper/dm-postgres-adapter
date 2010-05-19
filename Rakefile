@@ -14,7 +14,7 @@ begin
     gem.homepage    = 'http://github.com/datamapper/dm-postgres-adapter'
 
     gem.add_dependency 'do_postgres',       '~> 0.10.1'
-    gem.add_dependency 'dm-do-adapter',     '~> 0.10.3'
+    gem.add_dependency 'dm-do-adapter',     '~> 1.0.0.rc1'
 
     gem.add_development_dependency 'rspec', '~> 1.3'
   end
