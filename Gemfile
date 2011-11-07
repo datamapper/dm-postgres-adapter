@@ -1,6 +1,8 @@
 require 'pathname'
 
-source 'http://rubygems.org'
+source :rubygems
+
+gemspec
 
 SOURCE         = ENV.fetch('SOURCE', :git).to_sym
 REPO_POSTFIX   = SOURCE == :path ? ''                                : '.git'
@@ -22,9 +24,6 @@ group :development do
   gem 'dm-migrations', DM_VERSION,
     SOURCE  => "#{DATAMAPPER}/dm-migrations#{REPO_POSTFIX}",
     :branch => CURRENT_BRANCH
-
-  gem 'jeweler',       '~> 1.6.4'
-  gem 'rspec',         '~> 1.3.2'
 
 end
 
