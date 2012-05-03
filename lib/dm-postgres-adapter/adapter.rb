@@ -13,6 +13,21 @@ module DataMapper
         def supports_returning?
           true
         end
+        
+        def comparison_operator(comparison)
+          subject = comparison.subject
+          value   = comparison.value
+
+          case comparison.slug
+            when :ilike   then ilike_operator(value)
+            else super
+          end
+        end
+        
+        # @api private
+        def ilike_operator(operand)
+          'ILIKE'
+        end
       end
 
       include SQL
