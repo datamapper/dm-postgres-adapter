@@ -7,6 +7,8 @@ module DataMapper
     class PostgresAdapter < DataObjectsAdapter
 
       module SQL #:nodoc:
+        IDENTIFIER_MAX_LENGTH = 63
+
         private
 
         # @api private
